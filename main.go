@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
+	"github.com/huhuapop/go_shici/gofish"
 	"github.com/huhuapop/go_shici/handle"
-	"log"
-	"net/http"
 )
 
 func main()  {
@@ -33,5 +31,14 @@ func main()  {
 
 
 	//fmt.Print("hello")
-	h := handle.AuthorHandle{}
+	h := handler.AuthorHandle{}
+	fish := gofish.NewGoFish()
+	request, err := gofish.NewRequest("GET", authors, gofish.UserAgent, &h, nil)
+	if err != nil{
+		fmt.Println(err)
+		return
+	}
+	fish.Request = request
+	fish.Visit()
+
 }
