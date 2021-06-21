@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/huhuapop/go_shici/gofish"
-	"github.com/huhuapop/go_shici/handle"
+	"github.com/huhuapop/go-shici/gofish"
+	"github.com/huhuapop/go-shici/handle"
 )
 
 func main()  {
@@ -31,7 +31,7 @@ func main()  {
 
 
 	//fmt.Print("hello")
-	h := handler.AuthorHandle{}
+	h := handle.AuthorHandle{}
 	fish := gofish.NewGoFish()
 	request, err := gofish.NewRequest("GET", authors, gofish.UserAgent, &h, nil)
 	if err != nil{

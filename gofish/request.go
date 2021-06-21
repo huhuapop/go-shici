@@ -37,7 +37,7 @@ func (r *Request) Do() error {
 	return nil	
 }
 
-func (r *Request) NewRequest (method, Url, userAgent string, Handle Handle, Body io.Reader)(*Request, error){
+func NewRequest (method, Url, userAgent string, Handle Handle, Body io.Reader)(*Request, error){
 	_, err := url.Parse(Url)
 	if err != nil{
 		return nil, err
